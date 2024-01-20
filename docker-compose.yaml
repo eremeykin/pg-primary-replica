@@ -28,6 +28,7 @@ services:
       -c max_wal_senders=10 
       -c max_replication_slots=10 
       -c hot_standby_feedback=on
+      -c synchronous_standby_names='*'
     volumes:
       - ./00_init.sql:/docker-entrypoint-initdb.d/00_init.sql
 
